@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,6 +40,12 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="SYS">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\3497673755\1.6\Assemblies\SYS.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Assembly-CSharp">
@@ -58,8 +65,10 @@
       <Private>False</Private>
     </Reference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
+    <Compile Include="HarmonyPatches\CompProperties_WeaponExtention.cs" />
+    <Compile Include="HarmonyPatches\HarmonyPatch.cs" />
+    <Compile Include="HarmonyPatches\SYSFix.cs" />
     <Compile Include="HediffComps\HediffComp_giveAfterEffect.cs" />
     <Compile Include="HediffComps\HediffComp_givePermanentTrait.cs" />
     <Compile Include="HediffComps\HediffComp_InstantHeal.cs" />
@@ -67,7 +76,9 @@
     <Compile Include="HediffComps\HediffComp_MemoryWipe.cs" />
     <Compile Include="HediffComps\HediffComp_MentalStateGiver.cs" />
     <Compile Include="HediffComps\HediffComp_RemoveSpecificHediffs.cs" />
+    <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_TendWithNumLimit.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_CureAll.cs" />
+    <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveOrRemoveHediffWithConditions.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveRandomInspiration.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_RemoveSpecificHediffs.cs" />
     <Compile Include="MentalState\MentalStateWorker_RomanceAttempt.cs" />
