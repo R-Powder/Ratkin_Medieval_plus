@@ -172,27 +172,48 @@
             </li>
           </value>
         </li>
-        <!-- Couch: create <comps> if missing, then inject -->
+        <!-- Couch: create <comps> if missing, then inject (ONLY if Couch exists) -->
         <li Class="PatchOperationConditional">
-          <xpath>/Defs/ThingDef[defName='Couch']/comps</xpath>
-          <nomatch Class="PatchOperationAdd">
-            <xpath>/Defs/ThingDef[defName='Couch']</xpath>
-            <value><comps /></value>
-          </nomatch>
-        </li>
-        <li Class="PatchOperationAdd">
-          <xpath>/Defs/ThingDef[defName='Couch']/comps</xpath>
-          <value>
-            <li Class="CompProperties_Facility">
-              <linkableBuildings>
-                <li>RKM_GrandLectern</li>
-              </linkableBuildings>
-              <maxSimultaneous>3</maxSimultaneous>
-            </li>
-          </value>
+          <xpath>/Defs/ThingDef[defName='Couch']</xpath>
+          <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+              <li Class="PatchOperationConditional">
+                <xpath>/Defs/ThingDef[defName='Couch']/comps</xpath>
+                <nomatch Class="PatchOperationAdd">
+                  <xpath>/Defs/ThingDef[defName='Couch']</xpath>
+                  <value><comps /></value>
+                </nomatch>
+              </li>
+              <li Class="PatchOperationAdd">
+                <xpath>/Defs/ThingDef[defName='Couch']/comps</xpath>
+                <value>
+                  <li Class="CompProperties_Facility">
+                    <linkableBuildings>
+                      <li>RKM_GrandLectern</li>
+                    </linkableBuildings>
+                    <maxSimultaneous>3</maxSimultaneous>
+                  </li>
+                </value>
+              </li>
+            </operations>
+          </match>
         </li>
       </operations>
     </nomatch>
+  </Operation>
+
+  <!-- ================================================================ -->
+  <!-- EXTRA: Link Couch to RKM_GrandLectern (for connection lines)     -->
+  <!-- ================================================================ -->
+  <Operation Class="PatchOperationConditional">
+    <xpath>/Defs/ThingDef[defName='Couch']</xpath>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/ThingDef[defName='RKM_GrandLectern']/comps/li[@Class='CompProperties_AffectedByFacilities']/linkableFacilities</xpath>
+      <value>
+        <li>Couch</li>
+      </value>
+    </match>
   </Operation>
 
 </Patch>

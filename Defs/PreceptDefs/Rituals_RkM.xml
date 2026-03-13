@@ -16,7 +16,7 @@
        fields — they are controlled via canStartAnytime / alwaysStartAnytime on RitualPatternDef. -->
   <PreceptDef>
     <defName>RKM_TeachingRitual_Base</defName>
-    <preceptClass>Precept_Ritual</preceptClass>
+    <preceptClass>RkM.Precept_TeachingRitual</preceptClass>
     <label>teaching ritual</label>
     <description>A teaching ritual that grants skill XP to participants.</description>
     <!-- Use our modded teaching pattern so the lectern/podium is guaranteed to be the start spot. -->

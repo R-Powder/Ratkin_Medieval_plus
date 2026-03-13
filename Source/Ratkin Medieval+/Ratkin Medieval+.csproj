@@ -88,6 +88,7 @@
     <Compile Include="HarmonyPatches\HarmonyPatch.cs" />
     <Compile Include="HarmonyPatches\GenRecipe_MakeRecipeProducts_Patch.cs" />
     <Compile Include="HarmonyPatches\SYSFix.cs" />
+    <Compile Include="HarmonyPatches\TeachingRitualPatches.cs" />
     <Compile Include="HediffComps\HediffComp_giveAfterEffect.cs" />
     <Compile Include="HediffComps\HediffComp_givePermanentTrait.cs" />
     <Compile Include="HediffComps\HediffComp_InstantHeal.cs" />
@@ -101,6 +102,7 @@
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_GiveRandomInspiration.cs" />
     <Compile Include="IngestionOutcomeDoers\IngestionOutcomeDoer_RemoveSpecificHediffs.cs" />
     <Compile Include="Jobs\JobDriver_PlaySong.cs" />
+    <Compile Include="Jobs\JobGiver_TeachAtLectern.cs" />
     <Compile Include="MentalState\MentalStateWorker_RomanceAttempt.cs" />
     <Compile Include="Override\ColdPlant.cs" />
     <Compile Include="ThingComps\CompNutritionClassify.cs" />
@@ -112,6 +114,7 @@
     <Compile Include="ThingComps\CompProperties_GetEquipmentGizmo.cs" />
     <Compile Include="ThingComps\CompEquipmentWithGizmos.cs" />
     <Compile Include="Utilities.cs" />
+    <Compile Include="Rituals\Precept_TeachingRitual.cs" />
     <Compile Include="Rituals\RitualPosition_GrandLectern.cs" />
     <Compile Include="Rituals\RitualGiveClassXPProps.cs" />
     <Compile Include="Rituals\RitualOutcomeEffectWorker_GiveClassXP.cs" />

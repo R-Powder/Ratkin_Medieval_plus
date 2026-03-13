@@ -38,7 +38,14 @@
         <ritualDefName>RKM_TeachingRitual_Base</ritualDefName>
       </li>
       <!-- Allows linked CompFacility buildings (blackboards) to register. -->
-      <li Class="CompProperties_AffectedByFacilities"/>
+      <li Class="CompProperties_AffectedByFacilities">
+        <linkableFacilities>
+          <li>RKM_Blackboard</li>
+          <li>Stool</li>
+          <li>DiningChair</li>
+          <li>Armchair</li>
+        </linkableFacilities>
+      </li>
     </comps>
     <!-- Use the south-facing texture as the UI icon. -->
     <uiIconPath>Things/Building/grandlecturn/RkM_grandlecturn_south</uiIconPath>

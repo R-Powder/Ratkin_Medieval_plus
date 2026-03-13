@@ -37,10 +37,11 @@
         <roleBehaviors>
           <li>
             <roleId>teacher</roleId>
-            <!-- GiveSpeech is defined in Core (Duties_Gatherings.xml) — no DLC required.
-                 SpeakOnCellFacingSpectators was Ideology-only; GiveSpeech makes the
-                 teacher walk to their spot and perform a speech-giving job identically. -->
-            <dutyDef>GiveSpeech</dutyDef>
+            <!-- RKM_TeachAtLectern is our own DutyDef (Defs/DutyDefs/RKM_DutyDefs.xml).
+                 It uses GotoTravelDestination(exactCell=true) then
+                 JobGiver_TeachAtLectern, which creates a plain-cell GiveSpeech
+                 job — no Building_Throne required (unlike Core's GiveSpeech duty). -->
+            <dutyDef>RKM_TeachAtLectern</dutyDef>
             <!-- speakerInteraction removed: Speech_DateRitual is Ideology-only.
                  The ritual functions correctly without a speaker interaction. -->
             <customPositions>
